@@ -141,6 +141,10 @@
                 <button class="tool-btn" onclick="addText()">
                     <i class="fa-solid fa-t"></i> เพิ่มข้อความ
                 </button>
+
+                <button class="tool-btn" onclick="toggleReferenceBorder()" id="referenceBorderBtn">
+                    <i class="fa-solid fa-border-all"></i> ลบเส้นปะกรอบอ้างอิง
+                </button>
             </div>
 
             <!-- Export Button -->
@@ -546,6 +550,18 @@
     
     function openLightbox(event) { event.stopPropagation(); document.getElementById('lightbox').classList.add('active'); }
     function closeLightbox() { document.getElementById('lightbox').classList.remove('active'); }
+
+    function toggleReferenceBorder() {
+        const refBox = document.getElementById('refUploadBox');
+        const button = document.getElementById('referenceBorderBtn');
+        const borderRemoved = refBox.dataset.borderRemoved === 'true';
+
+        refBox.style.borderStyle = borderRemoved ? 'dashed' : 'none';
+        refBox.dataset.borderRemoved = String(!borderRemoved);
+        button.innerHTML = borderRemoved
+            ? '<i class="fa-solid fa-border-all"></i> ลบเส้นปะกรอบอ้างอิง'
+            : '<i class="fa-solid fa-border-none"></i> แสดงเส้นปะกรอบอ้างอิง';
+    }
 
     function toggleExportMenu(event) {
         event.stopPropagation();
