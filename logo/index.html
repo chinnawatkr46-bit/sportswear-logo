@@ -152,7 +152,7 @@
                 </button>
 
                 <button class="tool-btn" onclick="toggleReferenceBorder()" id="referenceBorderBtn">
-                    <i class="fa-solid fa-border-all"></i> ลบเส้นปะกรอบอ้างอิง
+                    <i class="fa-solid fa-border-all"></i> ลบเส้นกรอบอ้างอิง
                 </button>
             </div>
 
@@ -646,11 +646,11 @@
         const button = document.getElementById('referenceBorderBtn');
         const borderRemoved = refBox.dataset.borderRemoved === 'true';
 
-        refBox.style.borderStyle = borderRemoved ? 'dashed' : 'none';
+        refBox.style.borderStyle = borderRemoved ? 'solid' : 'none';
         refBox.dataset.borderRemoved = String(!borderRemoved);
         button.innerHTML = borderRemoved
-            ? '<i class="fa-solid fa-border-all"></i> ลบเส้นปะกรอบอ้างอิง'
-            : '<i class="fa-solid fa-border-none"></i> แสดงเส้นปะกรอบอ้างอิง';
+            ? '<i class="fa-solid fa-border-all"></i> ลบเส้นกรอบอ้างอิง'
+            : '<i class="fa-solid fa-border-none"></i> แสดงเส้นกรอบอ้างอิง';
     }
 
     function toggleExportMenu(event) {
